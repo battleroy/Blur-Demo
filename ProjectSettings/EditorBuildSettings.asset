@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/!Setup.unity
+    guid: 48507fd5b6a204d92a48d7e6362f7c55
+  - enabled: 1
+    path: Assets/_Scenes/01_GrabPass.unity
+    guid: 90b85b72556894e58bbc957d7da8fca7
+  m_configObjects: {}
