@@ -75,6 +75,7 @@ Shader "Blur-Demo/GrabPass_main"
                 float4 vertex   : SV_POSITION;
                 fixed4 color    : COLOR;
                 float4 texcoord  : TEXCOORD0;
+                float4 worldPosition : TEXCOORD1;
             };
 
             fixed4 _Color;
@@ -92,6 +93,7 @@ Shader "Blur-Demo/GrabPass_main"
             v2f vert(appdata_t v)
             {
                 v2f OUT;
+                OUT.worldPosition = v.vertex;
                 OUT.vertex = UnityObjectToClipPos(v.vertex);
                 OUT.texcoord = ComputeGrabScreenPos(OUT.vertex);
                 OUT.color = v.color * _Color;
@@ -168,6 +170,7 @@ Shader "Blur-Demo/GrabPass_main"
             {
                 float4 vertex   : SV_POSITION;
                 float4 texcoord  : TEXCOORD0;
+                float4 worldPosition : TEXCOORD1;
             };
 
             fixed4 _Color;
@@ -185,6 +188,7 @@ Shader "Blur-Demo/GrabPass_main"
             v2f vert(appdata_t v)
             {
                 v2f OUT;
+                OUT.worldPosition = v.vertex;
                 OUT.vertex = UnityObjectToClipPos(v.vertex);
                 OUT.texcoord = ComputeGrabScreenPos(OUT.vertex);
                 return OUT;

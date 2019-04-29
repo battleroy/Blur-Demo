@@ -4,22 +4,23 @@ using UnityEngine.UI;
 
 public class FpsMeter : MonoBehaviour 
 {
-    const int FrameRate = 8;
+    const float TimeRate = 1.0f;
 
     [SerializeField] Text text;
 
-    float fpsAccumulator;
+    float timeAccumulator;
     int framesTaken;
 
     void Update()
     {
-        fpsAccumulator += 1.0f / Time.unscaledDeltaTime;
-        if (++framesTaken >= FrameRate)
+        ++framesTaken;
+        timeAccumulator += Time.unscaledDeltaTime;
+        if (timeAccumulator >= TimeRate)
         {
-            int fps = (int)(fpsAccumulator / FrameRate);
+            int fps = (int)(framesTaken / timeAccumulator);
             text.text = string.Format("FPS = {0}", fps.ToString());
 
-            fpsAccumulator = 0.0f;
+            timeAccumulator = 0.0f;
             framesTaken = 0;
         }
     }
