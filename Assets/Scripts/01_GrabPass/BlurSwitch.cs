@@ -3,11 +3,11 @@
 
 public class BlurSwitch : MonoBehaviour 
 {
-    [SerializeField] MonoBehaviour blurBehaviour;
+    public MonoBehaviour blurBehaviour;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (blurBehaviour != null && Input.GetKeyDown(KeyCode.Space))
         {
             blurBehaviour.enabled = !blurBehaviour.enabled;
         }

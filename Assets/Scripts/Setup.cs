@@ -9,6 +9,9 @@ public class Setup : MonoBehaviour
     void Awake()
     {
         Application.targetFrameRate = 100000;
-        SceneManager.LoadScene(additiveSceneName, LoadSceneMode.Additive);
+        if (!SceneManager.GetSceneByName(additiveSceneName).IsValid())
+        {
+            SceneManager.LoadScene(additiveSceneName, LoadSceneMode.Additive);
+        }
     }
 }
