@@ -17,7 +17,8 @@ Shader "Blur-Demo/Blur_post_process"
 
         Lighting Off
         ZWrite Off
-        Blend SrcAlpha OneMinusSrcAlpha
+        Cull Off
+        Blend One Zero
         
         // Horizontal
         Pass

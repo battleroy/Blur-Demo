@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/02_OnRenderImage.unity
     guid: 693daa6e53fac440aa88bb7098fc5fef
+  - enabled: 1
+    path: Assets/_Scenes/03_CommandBuffer_Blur.unity
+    guid: 30d3560adbae9470f9b75bbbf3581433
   m_configObjects: {}
