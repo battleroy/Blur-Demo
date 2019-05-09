@@ -6,7 +6,7 @@ public class CommandBufferGreenScreenSetup : MonoBehaviour
 {
     const CameraEvent GreenScreenEvent = CameraEvent.AfterForwardAlpha;
     CommandBuffer cb;
-    Camera mainCamera;
+    Camera targetCamera;
 
 
     void Awake()
@@ -15,18 +15,18 @@ public class CommandBufferGreenScreenSetup : MonoBehaviour
         cb = new CommandBuffer();
         cb.name = "Green Screen Post Process";
         cb.Blit(BuiltinRenderTextureType.CameraTarget, BuiltinRenderTextureType.CameraTarget, greenScreenMat);
-        mainCamera = Camera.main;
+        targetCamera = GameObject.Find("Late Camera").GetComponent<Camera>();
     }
 
 
     void OnEnable()
     {
-        mainCamera.AddCommandBuffer(GreenScreenEvent, cb);
+        targetCamera.AddCommandBuffer(GreenScreenEvent, cb);
     }
 
 
     void OnDisable()
     {
-        mainCamera.RemoveCommandBuffer(GreenScreenEvent, cb);    
+        targetCamera.RemoveCommandBuffer(GreenScreenEvent, cb);    
     }
 }

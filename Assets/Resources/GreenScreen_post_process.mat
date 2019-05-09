@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: GreenScreen_post_process
   m_Shader: {fileID: 4800000, guid: 59e39fd260d044a92a9e42bf82a126ae, type: 3}
   m_ShaderKeywords: 
@@ -66,17 +67,26 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _HueOverValueWeight: 0.5
+    - _HueWeight: 0.21
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _ReplacementPower: 28.28
+    - _ReplacementPower: 19.68
+    - _ReplacementPowerHue: 9.91
+    - _ReplacementPowerSaturation: 7
+    - _ReplacementPowerValue: 4.2
+    - _SaturationWeight: 0.8
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _ToleranceHi: 0.18
+    - _ToleranceLo: 0.17
     - _UVSec: 0
+    - _ValueWeight: 0.2
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ReplacementColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ReplacementColor: {r: 0.43137258, g: 0.8862746, b: 0.6, a: 1}
