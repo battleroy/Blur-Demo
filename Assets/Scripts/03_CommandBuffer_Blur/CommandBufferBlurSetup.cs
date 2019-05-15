@@ -51,14 +51,13 @@ public class CommandBufferBlurSetup : MonoBehaviour
 
     CommandBuffer CreateBlurCommandBuffer()
     {
-        cb = new CommandBuffer();
-        cb.name = "Blur Post Process";
+        cb = new CommandBuffer { name = "Blur Post Process" };
         const string sampleName = "Blur";
         cb.BeginSample(sampleName);
         cb.GetTemporaryRT(rtId, Screen.width >> downsample, Screen.height >> downsample);
         if (downsample > 0)
         {
-            string subSampleName = string.Format("downsampled = {0}", downsample);
+            string subSampleName = $"downsampled = {downsample}";
             cb.BeginSample(subSampleName);
             cb.Blit(BuiltinRenderTextureType.CameraTarget, rtId);
             cb.Blit(rtId, rtId, blurMaterial, 0);
@@ -67,7 +66,7 @@ public class CommandBufferBlurSetup : MonoBehaviour
         }
         else
         {
-            string subSampleName = string.Format("full-size");
+            string subSampleName = "full-size";
             cb.BeginSample(subSampleName);
             cb.Blit(BuiltinRenderTextureType.CameraTarget, rtId, blurMaterial, 0);
             cb.Blit(rtId, BuiltinRenderTextureType.CameraTarget, blurMaterial, 1);

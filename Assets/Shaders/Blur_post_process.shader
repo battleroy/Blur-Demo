@@ -102,7 +102,7 @@ Shader "Blur-Demo/Blur_post_process"
         Pass
         {
         CGPROGRAM
-                        #pragma vertex vert
+            #pragma vertex vert
             #pragma fragment frag
             #pragma target 2.0
 
