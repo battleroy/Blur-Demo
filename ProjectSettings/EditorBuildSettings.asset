@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/03_CommandBuffer_Blur.unity
     guid: 30d3560adbae9470f9b75bbbf3581433
+  - enabled: 1
+    path: Assets/_Scenes/04_CommandBuffer_GreenScreen.unity
+    guid: 39ccddff0218945d7b271785d60808df
   m_configObjects: {}
